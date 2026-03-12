@@ -1,0 +1,24 @@
+
+/* Leaf Animation */
+.leaf {
+    position: fixed;
+    top: -50px;
+    z-index: 2500; /* Between door(2000) and buffer(3000), or above door? Door is 2000. Buffer is 3000. Main content is 1000. Leaves should be above doors or behind? 
+    If they fall "after user open the door", maybe they should be visible above the main content but below the buffer. 
+    Let's put them at 2500 so they are above the doors (which might be rotating out) and above main content. */
+    pointer-events: none;
+    background-color: var(--primary-color);
+    border-radius: 5px 50px;
+    opacity: 0.8;
+}
+
+@keyframes fall {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(100px, 100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
